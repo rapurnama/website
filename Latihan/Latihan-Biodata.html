@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Penduduk</title>
+</head>
+<body>
+    <h1>Form Biodata Penduduk</h1>
+    <form id="BiodataForm">
+        <label for="NIK">NIK:</label>
+        <input type="number" id="NIK" name="NIK" required><br><br>
+
+        <label for="Nama">Nama:</label>
+        <input type="text" id="Nama" name="Nama" required><br><br>
+
+        <label for="Kabupaten">Kota/Kabupaten:</label>
+        <select id="Kabupaten" name="Kabupaten" onchange="UbahOpsiKecamatan()">
+            <option value="Kota Bandung">Kota Bandung</option>
+            <option value="Kabupaten Bandung">Kabupaten Bandung</option>
+        </select><br><br>
+
+        <label for="Kecamatan">Kecamatan:</label>
+        <select id="Kecamatan" name="Kecamatan" onchange="UbahOpsiDesa()">
+        </select><br><br>
+
+        <label for="Desa">Kelurahan/Desa:</label>
+        <select id="Desa" name="Desa">
+        </select><br><br>
+
+        <input type="button" value="Simpan" onclick="SimpanBiodata()">
+    </form>
+
+    <h2>Daftar Biodata Penduduk</h2>
+    <table id="DaftarBiodata">
+        <tr>
+            <th>NIK</th>
+            <th>Nama</th>
+            <th>Kabupaten</th>
+            <th>Kecamatan</th>
+            <th>Desa</th>
+        </tr>
+    </table>
+
+    <script>
+        function UbahOpsiKecamatan() {
+            var pilihKabupaten = document.getElementById("Kabupaten");
+            var pilihKecamatan = document.getElementById("Kecamatan");
+
+            pilihKecamatan.innerHTML = "";
+
+            var KabupatenTerpilih = pilihKabupaten.value;
+
+            if (KabupatenTerpilih === "Kota Bandung") {
+                pilihKecamatan.add(new Option("Kiara Condong", "Kiara Condong"));
+                pilihKecamatan.add(new Option("Ujung Berung", "Ujung Berung"));
+            } else if (KabupatenTerpilih === "Kabupaten Bandung") {
+                pilihKecamatan.add(new Option("Cileunyi", "Cileunyi"));
+                pilihKecamatan.add(new Option("Cibiru", "Cibiru"));
+            }
+            
+            UbahOpsiDesa();
+        }
+
+        function UbahOpsiDesa() {
+            var pilihKecamatan = document.getElementById("Kecamatan");
+            var pilihDesa = document.getElementById("Desa");
+
+            pilihDesa.innerHTML = "";
+
+            var KecamatanTerpilih = pilihKecamatan.value;
+
+            if (KecamatanTerpilih === "Kiara Condong") {
+                pilihDesa.add(new Option("Sukapura", "Sukapura"));
+                pilihDesa.add(new Option("Cidurian", "Cidurian"));
+            
+            } else if (KecamatanTerpilih === "Cileunyi") {
+                pilihDesa.add(new Option("Cimekar", "Cimekar"));
+                pilihDesa.add(new Option("Cileunyi Kulon", "Cileunyi Kulon"));
+            }
+            else if (KecamatanTerpilih === "Ujung Berung") {
+                pilihDesa.add(new Option("Pasir Jati", "Pasir Jati"));
+                pilihDesa.add(new Option("Melatiwangi", "Melatiwangi"));
+            }
+            else if (KecamatanTerpilih === "Cibiru") {
+                pilihDesa.add(new Option("Cipadung", "Cipadung"));
+                pilihDesa.add(new Option("Palasari", "Palasari"));
+            }
+        }
+
+
+        function SimpanBiodata() {
+            var NIK = document.getElementById("NIK").value;
+            var Nama = document.getElementById("Nama").value;
+            var Kabupaten = document.getElementById("Kabupaten").value;
+            var Kecamatan = document.getElementById("Kecamatan").value;
+            var Desa = document.getElementById("Desa").value;
+
+            var BiodataTable = document.getElementById("DaftarBiodata");
+            var newRow = BiodataTable.insertRow(-1);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+
+            cell1.innerHTML = NIK;
+            cell2.innerHTML = Nama;
+            cell3.innerHTML = Kabupaten;
+            cell4.innerHTML = Kecamatan;
+            cell5.innerHTML = Desa;
+
+            // Reset form
+            document.getElementById("BiodataForm").reset();
+            UbahOpsiKecamatan();
+            UbahOpsiDesa()
+        }
+
+    
+    </script>
+</body>
+</html>

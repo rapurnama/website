@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = 5
+    var b = 4
+    var c = 3
+    let nilaiTerbesar;
+    let nilaiTerkecil;
+
+    document.write("a = 5<br>b = 4<br>c = 3<br>")
+
+    if (a > b && a > c){
+        nilaiTerbesar = a;
+    } else if (b > a && b > c) {
+        nilaiTerbesar = b;
+    } else {
+        nilaiTerbesar = c;
+    }
+
+
+    if (a < b && a < c){
+        nilaiTerkecil = a;
+    } else if (b < a && b < c){
+        nilaiTerkecil = b;
+    } else {
+        nilaiTerkecil = c;
+    }
+    document.write("<br>")
+    document.write("Hasil Hitung :", "<br>")
+    document.write("Nilai Terbesar : " + nilaiTerbesar + "<br>")
+    document.write("Nilai Terkecil : " + nilaiTerkecil)
+</script>
+</html>

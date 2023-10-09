@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+        table{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table width="80%">
+            <tr>
+            <td width="45%">NIS</td>
+            <td width="10%" align="center">:</td>
+            <td width="45%"><input type="number"></td>
+            </tr>
+            <tr>
+            <td>Nama</td>
+            <td align="center">:</td>
+            <td><input type="text"></td>
+            </tr>
+            <tr>
+            <td>Alamat</td>
+            <td align="center">:</td>
+            <td><input textarea name="Alamat" id="Alamat" cols="30" rows="4"></td>
+            </tr>
+            <tr>
+            <td>Jenis Kelamin</td>
+            <td align="center">:</td>
+            <td><select name="jeniskelamin" id="jeniskelamin" class="box">
+                <option>Laki-Laki</option>
+                <option>Wanita</option>
+              </select></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td align="center">:</td>
+                <td><input type="date" id="TglLahir" name="TglLahir" class="box"></td>
+            </tr>
+            <tr>
+                <td>Agama</td>
+                <td align="center">:</td>
+                <td>
+                    <input type="radio" id="Islam" name="Islam">
+                    <label for="islam">Islam</label><br>
+                    <input type="radio" id="Kristen" name="Kristen">
+                    <label for="Kristen">Kristen</label><br>
+                    <input type="radio" id="Hindu" name="Hindu">
+                    <label for="Hindu">Hindu</label><br>
+                    <input type="radio" id="Budha" name="Budha">
+                    <label for="Budha">Budha</label><br>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td align="center">:</td>
+                <td>
+                    <input type="checkbox" id="Voli" name="Voli" value="voli">
+                    <label for="Voli">Voli</label><br>
+                    <input type="checkbox" id="Renang" name="Renang" value="Renang">
+                    <label for="Renang">Renang</label><br>
+                    <input type="checkbox" id="dll" name="dll" value="dll">
+                    <label for="dll">dll</label>
+                </td>
+            </tr>
+            <tr>
+            <td align="right"><input type="submit" name="kirim" value="Kirim"  /></td>
+            <td align="center">:</td>
+            <td><input type="reset" name="reset" value="Reset" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
